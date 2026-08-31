@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AMoya Consultores — Contabilidad, Auditoría, Tributario, Costos y Finanzas.">
+<title>AMoya Consultores | Excelencia financiera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#02050a; --navy:#061022; --navy2:#0a1930; --ink:#dce3ee;
+  --muted:#8d99ab; --gold:#d4a63b; --gold2:#f0cb73; --line:rgba(255,255,255,.09);
+  --glass:rgba(7,17,34,.62); --max:1220px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;background:var(--black);color:white;line-height:1.7}
+a{text-decoration:none;color:inherit}
+.container{width:min(91%,var(--max));margin:auto}
+.topline{height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+header{
+  position:fixed;top:2px;left:0;right:0;z-index:100;
+  background:rgba(2,5,10,.56);backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.06)
+}
+nav{height:80px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-mini{width:39px;height:39px;display:grid;place-items:center;border:1px solid rgba(212,166,59,.55);font-family:"Cormorant Garamond",serif;font-size:18px;color:var(--gold2);letter-spacing:-.06em}
+.brand-name{font-size:12px;letter-spacing:.22em;color:#eff2f8}
+.menu{display:flex;align-items:center;gap:32px}
+.menu a{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#c6cfdd;transition:.25s}
+.menu a:hover{color:var(--gold2)}
+.menu .contact-link{padding:11px 17px;border:1px solid rgba(212,166,59,.55)}
+.menu .contact-link:hover{background:rgba(212,166,59,.08)}
+.mobile{display:none;background:none;border:0;color:#fff;font-size:25px}
+
+.hero{
+  min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;
+  background:
+  radial-gradient(circle at 7% 12%,rgba(28,65,122,.42),transparent 31%),
+  radial-gradient(circle at 80% 65%,rgba(12,37,75,.32),transparent 36%),
+  linear-gradient(125deg,#091a34 0%,#030914 50%,#000 100%);
+}
+.hero:after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(115deg,rgba(255,255,255,.035) 1px,transparent 1px),
+    linear-gradient(25deg,rgba(255,255,255,.02) 1px,transparent 1px);
+  background-size:110px 110px;opacity:.18;
+}
+.hero-grid{position:relative;z-index:1;padding-top:75px;display:grid;grid-template-columns:1.04fr .96fr;align-items:center;gap:75px}
+.overline{font-size:10px;letter-spacing:.36em;text-transform:uppercase;color:var(--gold2);margin-bottom:22px}
+h1,h2,h3{font-family:"Cormorant Garamond",serif;font-weight:600}
+h1{font-size:clamp(52px,6vw,88px);line-height:.93;letter-spacing:-.02em;max-width:760px}
+h1 span{color:var(--gold2)}
+.hero-copy{max-width:640px;color:#afbac9;font-size:16px;font-weight:300;margin-top:25px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;transition:.3s;border:1px solid transparent}
+.btn.primary{background:linear-gradient(135deg,#e0b64d,#a87916);color:#08101d;font-weight:600}
+.btn.primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(212,166,59,.14)}
+.btn.secondary{border-color:rgba(255,255,255,.18);color:#f3f4f8}
+.btn.secondary:hover{border-color:rgba(212,166,59,.6);color:var(--gold2)}
+.hero-logo{display:flex;justify-content:center;position:relative}
+.hero-logo:before{content:"";position:absolute;width:440px;height:440px;border:1px solid rgba(212,166,59,.11);border-radius:50%}
+.hero-logo img{position:relative;width:min(100%,500px);border-radius:6px;filter:drop-shadow(0 28px 55px rgba(0,0,0,.62))}
+.hero-note{margin-top:47px;display:flex;gap:30px;flex-wrap:wrap;padding-top:22px;border-top:1px solid var(--line)}
+.hero-note strong{display:block;color:#fff;font-size:12px;font-weight:500}
+.hero-note span{display:block;color:#707d91;font-size:10px;letter-spacing:.05em;margin-top:2px}
+
+section{padding:120px 0}
+.services{background:linear-gradient(180deg,#02050a,#071120 55%,#050b15)}
+.section-head{max-width:740px;margin-bottom:52px}
+.kicker{color:var(--gold2);font-size:10px;letter-spacing:.32em;text-transform:uppercase;margin-bottom:12px}
+h2{font-size:clamp(40px,4.2vw,60px);line-height:1.02;letter-spacing:-.015em}
+.lead{color:var(--muted);font-weight:300;max-width:680px;margin-top:15px;font-size:15px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.card{background:rgba(4,10,19,.95);padding:34px 30px;min-height:260px;position:relative;transition:.3s}
+.card:hover{background:linear-gradient(150deg,rgba(17,37,69,.95),rgba(4,10,19,.98));transform:translateY(-3px);z-index:2}
+.num{font-size:10px;color:var(--gold2);letter-spacing:.2em}
+.card h3{font-size:31px;margin:40px 0 10px}
+.card p{color:#8895a8;font-size:13px;font-weight:300}
+.card .line{position:absolute;bottom:0;left:30px;width:34px;height:1px;background:var(--gold);transition:.3s}
+.service-icon{width:38px;height:38px;color:var(--gold2);opacity:.9;margin-top:22px}.service-icon svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.card h3{margin-top:18px}
+.card:hover .line{width:65px}
+
+.story{background:#02050a}
+.story-grid{display:grid;grid-template-columns:.83fr 1.17fr;gap:85px;align-items:start}
+.monogram{font-family:"Cormorant Garamond",serif;font-size:118px;line-height:.8;color:var(--gold2);opacity:.85}
+.quote{margin-top:34px;border-left:1px solid var(--gold);padding-left:22px;color:#ccd4df;font-family:"Cormorant Garamond",serif;font-size:27px;line-height:1.18}
+.story-copy{margin-top:30px}
+.story-copy p{color:#a2adbd;font-size:14px;font-weight:300;margin-bottom:18px}
+.values{display:grid;grid-template-columns:repeat(2,1fr);gap:0 35px;margin-top:28px}
+.value{padding:17px 0;border-top:1px solid var(--line)}
+.value b{display:block;font-size:12px;letter-spacing:.04em}
+.value small{color:#7d899b;font-size:11px}
+
+.band{
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:linear-gradient(100deg,#08172d,#040914);
+}
+.band-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.band h2{font-size:52px}
+.band p{color:#8f9bae;margin-top:8px;font-size:13px}
+
+.contact{background:#02050a}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:85px}
+.contact-details{margin-top:28px;display:grid;gap:15px}
+.detail{padding:17px 0;border-bottom:1px solid var(--line)}
+.detail small{display:block;color:var(--gold2);font-size:9px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:3px}
+.detail span,.detail a{color:#dfe5ee;font-size:13px}
+form{display:grid;gap:12px}
+input,textarea{
+  width:100%;font:inherit;color:#f4f6f8;background:rgba(255,255,255,.025);
+  border:1px solid var(--line);padding:15px 16px;outline:none
+}
+input:focus,textarea:focus{border-color:rgba(212,166,59,.65)}
+textarea{min-height:155px;resize:vertical}
+.form-note{color:#6f7b8c;font-size:10px;margin-top:7px}
+
+footer{padding:24px 0;border-top:1px solid var(--line);font-size:10px;color:#697588}
+.footer-row{display:flex;justify-content:space-between;gap:20px}
+.gold{color:var(--gold2)}
+
+@media(max-width:900px){
+  .hero-grid,.story-grid,.contact-grid{grid-template-columns:1fr}
+  .hero-grid{padding-top:100px}
+  .hero-logo{order:-1}.hero-logo img{width:min(85%,390px)}
+  .hero-logo:before{width:310px;height:310px}
+  .cards{grid-template-columns:1fr 1fr}
+  .story-grid{gap:40px}
+  .band-grid{grid-template-columns:1fr}
+}
+@media(max-width:650px){
+  header{background:rgba(2,5,10,.9)}nav{height:68px}
+  .menu{display:none;position:absolute;top:68px;left:4%;right:4%;padding:18px;background:#061022;border:1px solid var(--line);flex-direction:column;align-items:flex-start}
+  .mobile{display:block}
+  .brand-name{font-size:10px;letter-spacing:.17em}
+  .hero-grid{gap:36px}
+  h1{font-size:52px}
+  .hero-copy{font-size:14px}
+  .hero-note{gap:17px}
+  section{padding:85px 0}
+  .cards{grid-template-columns:1fr}
+  .values{grid-template-columns:1fr}
+  .band h2{font-size:40px}
+  .footer-row{display:block}.footer-row div+div{margin-top:7px}
+}
+.wa-float{position:fixed;right:24px;bottom:24px;z-index:90;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#dcb44e,#a77918);color:#07101d;box-shadow:0 12px 28px rgba(0,0,0,.45);transition:.25s}.wa-float:hover{transform:translateY(-3px) scale(1.03)}.wa-float svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}@media(max-width:650px){.wa-float{right:17px;bottom:17px;width:50px;height:50px}}
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<header>
+ <div class="container">
+  <nav>
+   <a class="brand" href="#inicio"><span class="brand-mini">AM</span><span class="brand-name">AMOYA CONSULTORES</span></a>
+   <div class="menu" id="menu">
+    <a href="#servicios">Servicios</a><a href="#nosotros">Nosotros</a><a href="#contacto">Contacto</a>
+    <a class="contact-link" href="#contacto">Solicitar asesoría</a>
+   </div>
+   <button class="mobile" onclick="toggleMenu()" aria-label="Menú">☰</button>
+  </nav>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+ <div class="container hero-grid">
+  <div>
+   <div class="overline">Contabilidad · Auditoría · Tributario</div>
+   <h1>Visión financiera.<br><span>Decisiones superiores.</span></h1>
+   <p class="hero-copy">Asesoría profesional en contabilidad, auditoría, tributación, costos y finanzas. Transformamos información en claridad para que cada decisión tenga respaldo.</p>
+   <div class="actions">
+    <a class="btn primary" href="#contacto">Solicitar asesoría</a>
+    <a class="btn secondary" href="#servicios">Conocer servicios</a>
+   </div>
+   <div class="hero-note">
+    <div><strong>Rigurosidad</strong><span>Análisis preciso</span></div>
+    <div><strong>Confianza</strong><span>Atención personalizada</span></div>
+    <div><strong>Estrategia</strong><span>Visión de largo plazo</span></div>
+   </div>
+  </div>
+  <div class="hero-logo"><img src="logo.png" alt="AMoya Consultores"></div>
+ </div>
+</section>
+
+<section class="services" id="servicios">
+ <div class="container">
+  <div class="section-head">
+   <div class="kicker">Áreas de especialización</div>
+   <h2>Una visión integral de tu negocio.</h2>
+   <p class="lead">Unimos conocimiento contable, tributario y financiero para entregar información que realmente sirva para gestionar y crecer.</p>
+  </div>
+  <div class="cards">
+   <article class="card"><span class="num">01</span><div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="2.8" width="16" height="18.4" rx="2"/><line x1="7" y1="6.5" x2="17" y2="6.5"/><line x1="7" y1="10" x2="9" y2="10"/><line x1="12" y1="10" x2="14" y2="10"/><line x1="17" y1="10" x2="17" y2="10"/><line x1="7" y1="14" x2="9" y2="14"/><line x1="12" y1="14" x2="14" y2="14"/><line x1="17" y1="14" x2="17" y2="14"/><line x1="7" y1="18" x2="9" y2="18"/><line x1="12" y1="18" x2="14" y2="18"/><line x1="17" y1="18" x2="17" y2="18"/></svg></div><h3>Contabilidad</h3><p>Registros, cierres y reportes para una gestión ordenada, trazable y confiable.</p><i class="line"></i></article>
+   <article class="card"><span class="num">02</span><div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M7 16l4-4 3 2 5-6"/><circle cx="11" cy="12" r="1"/><circle cx="14" cy="14" r="1"/><circle cx="19" cy="7" r="1"/></svg></div><h3>Auditoría</h3><p>Revisión, análisis y control para fortalecer procesos y reducir riesgos.</p><i class="line"></i></article>
+   <article class="card"><span class="num">03</span><div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3.5h9l3 3V20.5H6z"/><path d="M15 3.5v4h3"/><path d="M9 11h6M9 14h6M9 17h4"/><path d="M17.5 12.5v5"/><path d="M15.5 15.5h4"/></svg></div><h3>Tributario</h3><p>Asesoría y planificación tributaria para cumplir con seguridad y oportunidad.</p><i class="line"></i></article>
+   <article class="card"><span class="num">04</span><div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M6 4h12"/><rect x="4" y="7" width="16" height="13" rx="1.5"/><path d="M8 11h3M13 11h3M8 15h3M13 15h3"/></svg></div><h3>Costos</h3><p>Control y análisis de costos para mejorar eficiencia, márgenes y rentabilidad.</p><i class="line"></i></article>
+   <article class="card"><span class="num">05</span><div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V10"/><path d="M10 19V6"/><path d="M16 19V12"/><path d="M22 19V4"/><path d="M3 19h20"/></svg></div><h3>Finanzas</h3><p>Flujo de caja, presupuestos e indicadores para apoyar decisiones estratégicas.</p><i class="line"></i></article>
+   <article class="card"><span class="num">06</span><div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8 12h8M12 8v8"/><path d="M5.5 5.5l1.5 1.5M18.5 5.5L17 7"/></svg></div><h3>Consultoría</h3><p>Una mirada transversal para ordenar, planificar y proyectar el negocio.</p><i class="line"></i></article>
+  </div>
+ </div>
+</section>
+
+<section class="story" id="nosotros">
+ <div class="container story-grid">
+  <div>
+   <div class="kicker">Sobre AMoya</div>
+   <div class="monogram">AM</div>
+   <div class="quote">“Información clara para decisiones que generan valor.”</div>
+  </div>
+  <div>
+   <h2>Profesionalismo con una mirada estratégica.</h2>
+   <div class="story-copy">
+    <p>En AMoya Consultores entendemos la gestión financiera como una herramienta para anticipar, controlar y avanzar.</p>
+    <p>Nuestro enfoque combina rigurosidad técnica, confidencialidad y una atención cercana, buscando que cada cliente comprenda sus números y tenga mejores herramientas para decidir.</p>
+   </div>
+   <div class="values">
+    <div class="value"><b>Rigurosidad</b><small>Precisión en cada análisis.</small></div>
+    <div class="value"><b>Confidencialidad</b><small>Cuidado responsable de tu información.</small></div>
+    <div class="value"><b>Claridad</b><small>Explicaciones simples y accionables.</small></div>
+    <div class="value"><b>Visión</b><small>Decisiones pensando en el futuro.</small></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="band">
+ <div class="container band-grid">
+  <div><div class="kicker">El siguiente paso</div><h2>Ordena. Comprende. Decide.</h2><p>Haz que tus números trabajen a favor de tu negocio.</p></div>
+  <a class="btn primary" href="https://wa.me/56947612058" target="_blank" rel="noopener">Hablar con AMoya</a>
+ </div>
+</section>
+
+<section class="contact" id="contacto">
+ <div class="container">
+  <div class="section-head">
+   <div class="kicker">Contacto</div>
+   <h2>Conversemos sobre tu negocio.</h2>
+   <p class="lead">Déjanos tus datos y cuéntanos qué necesitas. Te contactaremos para orientarte.</p>
+  </div>
+  <div class="contact-grid">
+   <div>
+    <div class="contact-details">
+     <div class="detail"><small>Correo corporativo</small><a href="mailto:amoya.consultores@gmail.com">amoya.consultores@gmail.com</a></div>
+     <div class="detail"><small>WhatsApp Business</small><a href="https://wa.me/56947612058" target="_blank" rel="noopener">+56 9 4761 2058</a></div>
+     <div class="detail"><small>Atención</small><span>Personas · Emprendedores · Empresas</span></div>
+    </div>
+   </div>
+   <form onsubmit="sendForm(event)">
+    <input id="name" required placeholder="Nombre">
+    <input id="email" type="email" required placeholder="Correo electrónico">
+    <input id="subject" required placeholder="Servicio o tema que necesitas">
+    <textarea id="message" required placeholder="Cuéntanos brevemente cómo podemos ayudarte"></textarea>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn primary" type="submit">Enviar por correo</button>
+      <button class="btn secondary" type="button" onclick="sendWhatsApp()">Enviar por WhatsApp</button>
+    </div>
+    <div class="form-note">Puedes enviar la consulta directamente por correo corporativo o WhatsApp Business.</div>
+   </form>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container footer-row">
+  <div>© <span id="year"></span> <span class="gold">AMOYA CONSULTORES</span></div>
+  <div>Contador · Auditor · Tributario · Costos y Finanzas</div>
+ </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+function toggleMenu(){
+ const m=document.getElementById('menu');
+ m.style.display=(getComputedStyle(m).display==='none')?'flex':'none';
+}
+function getContactData(){
+ const n=document.getElementById('name').value;
+ const em=document.getElementById('email').value;
+ const s=document.getElementById('subject').value;
+ const msg=document.getElementById('message').value;
+ return {n,em,s,msg};
+}
+function sendForm(e){
+ e.preventDefault();
+ const {n,em,s,msg}=getContactData();
+ const body=`Nombre: ${n}%0ACorreo: ${em}%0AServicio: ${s}%0A%0AMensaje:%0A${encodeURIComponent(msg)}`;
+ location.href=`mailto:amoya.consultores@gmail.com?subject=Consulta%20AMoya%20Consultores&body=${body}`;
+}
+function sendWhatsApp(){
+ const {n,em,s,msg}=getContactData();
+ const text=`Hola AMoya Consultores, quisiera realizar una consulta.%0A%0ANombre: ${encodeURIComponent(n)}%0ACorreo: ${encodeURIComponent(em)}%0AServicio: ${encodeURIComponent(s)}%0AMensaje: ${encodeURIComponent(msg)}`;
+ window.open(`https://wa.me/56947612058?text=${text}`,'_blank','noopener');
+}
+</script>
+<a class="wa-float" href="https://wa.me/56947612058" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp Business"><svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.6-4A8 8 0 1 1 20 11.5Z"/><path d="M8.8 8.5c.3-.4.6-.4.9-.1l.8.9c.2.2.2.5 0 .8l-.4.5c.6 1.2 1.5 2.1 2.7 2.7l.5-.4c.2-.2.5-.2.8 0l.9.8c.3.3.3.6-.1.9l-.5.4c-.4.3-.9.4-1.4.2-2.4-.8-4.4-2.8-5.2-5.2-.2-.5-.1-1 .2-1.4Z"/></svg></a>
+</body>
+</html>
