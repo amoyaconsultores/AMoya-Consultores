@@ -288,8 +288,10 @@ function getContactData(){
 function sendForm(e){
  e.preventDefault();
  const {n,em,s,msg}=getContactData();
- const body=`Nombre: ${n}%0ACorreo: ${em}%0AServicio: ${s}%0A%0AMensaje:%0A${encodeURIComponent(msg)}`;
- location.href=`mailto:amoya.consultores@gmail.com?subject=Consulta%20AMoya%20Consultores&body=${body}`;
+ const subject='Consulta AMoya Consultores';
+ const body=`Nombre: ${n}\nCorreo: ${em}\nServicio: ${s}\n\nMensaje:\n${msg}`;
+ const gmailUrl='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent('amoya.consultores@gmail.com')+'&su='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+ window.open(gmailUrl,'_blank','noopener');
 }
 function sendWhatsApp(){
  const {n,em,s,msg}=getContactData();
